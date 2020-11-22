@@ -10,6 +10,14 @@
         <p class="text-secondary">{{ user.email }}</p>
       </div>
     </div>
-    <!-- FORM HERE -->
+    <form method="POST", enctype="multipart/form-data">
+      {%csrf_token%}
+      <legend>Profile Info</legend>
+      <fieldset>
+          {{u_form | crispy}}
+          {{p_form | crispy}}
+      </fieldset>
+      <button type="submit">Update</button>
+  </form>
   </div>
 {%endblock content%}

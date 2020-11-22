@@ -1,0 +1,15 @@
+{%extends 'book/base.html'%}
+{%load crispy_forms_tags%}
+
+{%block content%}
+
+<form method="POST">
+    {%csrf_token%}
+    <legend>New Contact</legend>
+    <fieldset>
+        {{form | crispy}}
+    </fieldset>
+    <button type="submit">Save Contact</button>
+
+</form>
+{%endblock content%}

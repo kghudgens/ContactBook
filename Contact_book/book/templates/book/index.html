@@ -1,0 +1,12 @@
+{%extends 'book/base.html'%}
+
+{%block content%}
+<main role="main" class="inner cover">
+    
+    <p class="">Please Log in if you already have an account or Register now for new users.</p>
+    <p class="lead">
+      <a href="{% url 'login' %}" class="btn btn-lg btn-secondary">Log In</a>
+      <a href="{% url 'register' %}" class="btn btn-lg btn-secondary">Register</a>
+    </p>
+  </main>
+  {%endblock content%}

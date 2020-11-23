@@ -17,3 +17,7 @@ def book_form(request):
     else:
         form = ContactForm()
     return render(request, 'book/book_form.html',{'form':form})
+
+
+def about(request):
+    return render(request, 'book/about.html',)

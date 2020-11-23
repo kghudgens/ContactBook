@@ -1,0 +1,48 @@
+{%extends 'book/base.html'%}
+
+{%block content%}
+<main role="main" class="inner cover">
+  <h1>About</h1>
+{%if user.is_authenticated%}
+ <p>{{user.username}} thank you for coming to read about the project and myself. </p> 
+ 
+{%else%}
+<p>Welcome to the about page.</p>
+{%endif%}
+<br>
+<p>
+    My name is Kevin Hudgens and I am a self taught software engineer. This is my first Django project without a tutorial.
+    <br>
+    This project is web application that functions as a contact book.
+</p>
+
+<p>
+    <strong>Lessons Learned:</strong> 
+</p>
+<ul>
+    <li><strong>Django</strong></li>
+    <p>I can confidently say I can set up a Django project and create apps for it. Still need to familiarize myself with everything Django is capable of but I can definitely work with it.</p>
+    <li><strong>Object Oriented Programming</strong></li>
+    <p>Being forced to work with classes for the models.py, definitely helped me see the use of classes and decide on how to better use them.</p>
+</ul>
+
+<p>
+    <strong>Challenges:</strong> 
+</p>
+<ul>
+    <li> <strong>Templates:</strong>  </li>
+        <p>
+            For my first time working with Django templates, it was a little tricky.
+        </p>
+    <li><strong>URL Patterns:</strong></li>
+        <p>
+            When trying to decide whether the patterns go in the project folder or the individual urls.py folder, is when I met the wall.
+        </p>
+    <li><strong>Loading BootStrap:</strong></li>
+        <p>
+            Trying to work with multiple css folders for my bootstrap themes was a good experience.
+        </p>
+</ul>
+
+</main>
+  {%endblock content%}

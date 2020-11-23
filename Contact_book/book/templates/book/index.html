@@ -2,11 +2,15 @@
 
 {%block content%}
 <main role="main" class="inner cover">
-    
-    <p class="">Please Log in if you already have an account or Register now for new users.</p>
-    <p class="lead">
-      <a href="{% url 'login' %}" class="btn btn-lg btn-secondary">Log In</a>
-      <a href="{% url 'register' %}" class="btn btn-lg btn-secondary">Register</a>
-    </p>
-  </main>
+  <h1>Django Contact Book</h1>
+{%if user.is_authenticated%}
+ <h3>{{user.username}}, welcome to the Home Page</h3> 
+ 
+{%else%}
+
+<p>The Django Contact book is a web application that uses bootstrap on the frontend
+  and Django on the back-end to handle all operations. Please <a href="{% url 'login'%}">log in</a> or <a href="{% url 'register'%}">make an account</a>  if you are here to get started. </p>
+{%endif%}
+
+</main>
   {%endblock content%}

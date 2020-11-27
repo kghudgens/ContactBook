@@ -1,3 +1,10 @@
-.DS_Store,
-.vscode/,
+.DS_Store
+.vscode/
 Contact_env/
+../.DS_Store
+../.vscode/
+book/.DS_Store
+book/static/.DS_Store
+book/static/book/.DS_Store
+book/static/book/workspace.code-workspace
+../Contact_env/

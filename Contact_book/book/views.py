@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views import generic
@@ -32,6 +32,8 @@ def book_form(request):
             # saves the form to the database
             form.save()
             messages.success(request,f'Contact has been succesfully saved.')
+            # redirects the user back to the book form page so they can add more if wanted
+            return redirect('book-book_form')
     # If the form doesnt have the post method it will return a blank contactform 
     else:
         form = ContactForm()

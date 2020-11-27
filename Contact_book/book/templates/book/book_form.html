@@ -2,14 +2,24 @@
 {%load crispy_forms_tags%}
 
 {%block content%}
+    <!-- checks to see if there are messages to be displayed -->
+    {% if messages %}
+    <!-- loops through avaibale messages -->
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
 
-<form method="POST">
-    {%csrf_token%}
-    <legend>New Contact</legend>
-    <fieldset>
-        {{form | crispy}}
-    </fieldset>
-    <button type="submit">Save Contact</button>
+    {% endif %}
+<!-- Creates form that will be used for the creation of new contact objects -->
+    <form method="POST">
+        {%csrf_token%}
+        <legend>New Contact</legend>
 
-</form>
+        <fieldset>
+            {{form | crispy}}
+        </fieldset>
+
+        <button type="submit">Save Contact</button>
+
+    </form>
 {%endblock content%}

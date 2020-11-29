@@ -9,7 +9,7 @@
   {%if user.is_authenticated%}
 
     <h3>{{user.username}}, welcome to the Home Page</h3> 
-    <h4>Here are your saved contacts</h4>
+    <h4>Saved Contacts:</h4>
         <!-- For loop that goes through the objects in the Contact Book model 
           and gets it ready to be staged -->
           {% for contact in object_list%}
@@ -21,6 +21,7 @@
                 <li>Email Address: {{contact.email}}</li>
                 <li>Phone Number: {{contact.phone_number}}</li>
                 <li>Occupation: {{contact.occupation}}</li>
+                <p>View <a href="{% url 'contact_detail' contact.id %}">Contact</a></p>
               </ul>
         <!-- Ends the for loop -->
           {% endfor %}

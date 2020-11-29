@@ -24,8 +24,8 @@ def register(request):
 def profile(request):
     # checks to see if the method on the form is POST
     if request.method == 'POST':
-        # if the method if POST load the forms wanted into the template, with the 
-        # instance of the user
+        # if the method if POST load the forms wanted into the template, 
+        # with the instance of the user
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(
             request.POST, 

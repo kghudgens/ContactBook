@@ -7,9 +7,9 @@ from django.dispatch import receiver
 # Import the profile model that needs to be saved and linked ot the User
 from .models import Profile
 
-# When a user is saved send this signal, it will be received by the create Profile
-# function, an instance == User, if created the make a profile with the instance
-# of the User
+# When a user is saved send this signal, it will be received by the create 
+# Profile function, an instance == User, if created the make a profile with 
+# the instance of the User
 @receiver(post_save, sender=User) 
 def create_profile(sender, instance, created, **kwargs):
     if created:

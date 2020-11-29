@@ -13,10 +13,12 @@ def index(request):
 
 # Shows data taken in a list view
 class ContactListView(generic.ListView):
-    # Associates the ContactBook Model with this view so django knows what to display
+    # Associates the ContactBook Model with this view so django knows what to 
+    # display
     model = ContactBook
     # Django requires a different naming convention of its templates when using 
-    # class based views. So in order to completely override it use the template name
+    # class based views. So in order to completely override it use the template 
+    # name
     # attribute and have it equal the directory/app name and template name
     template_name = 'book/index.html'
 
@@ -37,7 +39,8 @@ def book_form(request):
             # saves the form to the database
             form.save()
             messages.success(request,f'Contact has been succesfully saved.')
-            # redirects the user back to the book form page so they can add more if wanted
+            # redirects the user back to the book form page so they can add more
+            #  if wanted
             return redirect('book-book_form')
     # If the form doesnt have the post method it will return a blank contactform 
     else:

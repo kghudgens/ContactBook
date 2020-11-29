@@ -20,6 +20,11 @@ class ContactListView(generic.ListView):
     # attribute and have it equal the directory/app name and template name
     template_name = 'book/index.html'
 
+# View that shows the contact alone 
+class ContactDetailView(generic.DetailView):
+    model = ContactBook
+    template_name = 'book/contact_detail.html'
+
 # Creates the form that will take the users data for the contact.
 def book_form(request):
     # checks to make sure that the form created has a POST method attached to it

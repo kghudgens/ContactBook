@@ -1,0 +1,33 @@
+{%extends 'book/base.html'%}
+
+{%block content%}
+    <main role="main" class="inner cover">
+
+    </main>
+<!-- Check to show what is displayed for logged in users -->
+{%if user.is_authenticated%}
+
+<h3>{{user.username}}</h3> 
+<h4>Saved Contact:</h4>
+<!-- Creates the indvidual contact -->
+              <ul>
+                <li>Date: {{contact.date_added}}</li>
+                <li>Full Name: {{contact.firstname}} {{contact.lastname}}</li>
+                <li>Email Address: {{contact.email}}</li>
+                <li>Phone Number: {{contact.phone_number}}</li>
+                <li>Occupation: {{contact.occupation}}</li>
+              </ul>
+
+{%else%}
+<p>Sign in to see your saved contacts</p>
+<p>
+    Please <a href="{% url 'login'%}">log in</a> or 
+    <a href="{% url 'register'%}">make an account</a> 
+    in order to see your saved contacts. 
+ </p>
+
+
+{%endif%}
+
+ 
+{%endblock content%}

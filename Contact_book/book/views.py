@@ -2,13 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.views import generic
+from django.urls import reverse_lazy
 from .models import ContactBook
 from .forms import ContactForm
 # Create your views here.
 
 # Original index view before adding the code for a list view
 def index(request):
-    
     return render(request, 'book/index.html', )
 
 # Shows data taken in a list view
@@ -26,6 +26,24 @@ class ContactListView(generic.ListView):
 class ContactDetailView(generic.DetailView):
     model = ContactBook
     template_name = 'book/contact_detail.html'
+
+# View that allows the user update the contact they made
+class ContactUpdateView(generic.UpdateView):
+    model = ContactBook
+    fields = [
+        'firstname', 
+        'lastname', 
+        'email', 
+        'phone_number', 
+        'occupation', 
+    ]
+
+    template_name = 'book/contact_form.html'
+
+class ContactDeleteView(generic.DeleteView):
+    model = ContactBook
+    success_url = reverse_lazy('book-index')
+
 
 # Creates the form that will take the users data for the contact.
 def book_form(request):

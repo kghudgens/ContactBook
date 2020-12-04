@@ -1,0 +1,13 @@
+{%extends 'book/base.html'%}
+{%load crispy_forms_tags%}
+
+{%block content%}
+    <form method="POST">
+        {%csrf_token%}
+        <legend>Delete Contact</legend>
+        <fieldset>
+           <p>Are you sure you would like to delete the contact for {{object}}</p> 
+        </fieldset>
+        <input type="submit" value="Confirm">
+    </form>
+{%endblock content%}

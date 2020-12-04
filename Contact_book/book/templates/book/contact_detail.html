@@ -19,6 +19,9 @@
                 <li>Phone Number: {{object.phone_number}}</li>
                 <li>Occupation: {{object.occupation}}</li>
               </ul>
+              <a href="{%url 'contact_form' object.id%}">Update</a>
+              <a href="{%url 'contact_delete' object.id%}">Delete</a>
+
 
 {%else%}
 <p>Sign in to see your saved contacts</p>
@@ -26,10 +29,10 @@
     Please <a href="{% url 'login'%}">log in</a> or 
     <a href="{% url 'register'%}">make an account</a> 
     in order to see your saved contacts. 
- </p>
+</p>
 
 
 {%endif%}
 
- 
+
 {%endblock content%}
